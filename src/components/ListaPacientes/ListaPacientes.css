@@ -1,0 +1,8 @@
+.table{
+    width: 100%;
+    border: 1px solid black;
+    margin-top: 40px;
+}
+.table tbody td{
+    border: 1px solid black;
+}
