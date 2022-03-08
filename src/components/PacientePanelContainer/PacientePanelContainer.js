@@ -44,7 +44,7 @@ export default function PacientePanelContainer(){
     return(
         <>
         <PacientePanel id={id} data={patients}/>
-        <Link onClick={clearPatient} to="/">
+        <Link onClick={clearPatient} to="/registro">
         <p onClick={clear}>REGRESAR AL LISTADO GENERAL</p>
         </Link>
         </>
