@@ -6,10 +6,11 @@ import {
     getDocs,
     addDoc
   } from "firebase/firestore";
+import './RegisterPanel.css'
 
 export default function RegisterPanel(){
 
-        const {newDate, setNewDate, newDni, setNewDni, setNewName, newPatologia, setNewLastName, setNewAge, setNewPatologia, setPacienteBuscado, getPaciente, createUser, allUsers} = useContext(PatientContext)
+        const {getPacienteByLastName, getPacienteByDni, pacienteBuscadoDni, setPacienteBuscadoDni,newDate, setNewDate, newDni, setNewDni, setNewName, newPatologia, setNewLastName, setNewAge, setNewPatologia, setPacienteBuscado, getPaciente, createUser, allUsers} = useContext(PatientContext)
     /*const createUser = async () => {
         await addDoc(usersCollectionRef, { 
           nombre: newName, 
@@ -36,7 +37,7 @@ export default function RegisterPanel(){
         setPacientes(p)
       }
 */
-
+       
       console.log(newPatologia)
      
       return(
@@ -76,11 +77,15 @@ export default function RegisterPanel(){
                 
                 <div className="container-fluid d-flex justify-content-center mt-3">
                 <input
-                placeholder="Buscar por nombre..."
+                placeholder="Buscar por..."
                 onChange={(event) => {
                     setPacienteBuscado(event.target.value);
-                } } /><button onClick={getPaciente}>Buscar Paciente</button>
+                } } />
+                <button onClick={getPaciente}>Buscar Paciente Por Nombre</button>
+                <button onClick={getPacienteByLastName}>Buscar Paciente Por Apellido</button>
+                <button onClick={getPacienteByDni}>Buscar Paciente Por DNI</button>
                 <button onClick={allUsers}>Ver todos los pacientes</button>
+                
                 </div>
                 </>
         )

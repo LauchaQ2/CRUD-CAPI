@@ -15,6 +15,8 @@ const PatientProvider = ({children}) => {
     const [newDni, setNewDni] = useState("");
     const [newPatologia, setNewPatologia] = useState("");
     const [pacienteBuscado, setPacienteBuscado] = useState([]);
+    const [pacienteBuscadoApellido, setPacienteBuscadoApellido] = useState([]);
+    const [pacienteBuscadoDni, setPacienteBuscadoDni] = useState([]);
     const [newAge, setNewAge] = useState(0);
     const usersCollectionRef = collection(db, "pacientes");
     const [newObservation, setNewObservation] = useState("")
@@ -51,6 +53,18 @@ const PatientProvider = ({children}) => {
         setPacientes([]);
         setPacientes(p)
       }
+      const getPacienteByLastName = () =>{
+        p = pacientes.filter(paciente => paciente.apellido === pacienteBuscado)  
+        console.log(p)
+        setPacientes([]);
+        setPacientes(p)
+      }
+      const getPacienteByDni = () =>{
+        p = pacientes.filter(paciente => paciente.dni === pacienteBuscado)  
+        console.log(p)
+        setPacientes([]);
+        setPacientes(p)
+      }
 
      const clearPatient = () =>{
         setPacientes([])
@@ -66,6 +80,10 @@ const PatientProvider = ({children}) => {
         setNewAge,
         pacienteBuscado,
         setPacienteBuscado,
+        pacienteBuscadoApellido,
+        setPacienteBuscadoApellido,
+        pacienteBuscadoDni,
+        setPacienteBuscadoDni,
         pacientes,
         createUser,
         newPatologia,
@@ -77,7 +95,9 @@ const PatientProvider = ({children}) => {
         setNewObservation,
         clearPatient,
         newDate, 
-        setNewDate
+        setNewDate,
+        getPacienteByLastName, 
+        getPacienteByDni
     }
 
 
