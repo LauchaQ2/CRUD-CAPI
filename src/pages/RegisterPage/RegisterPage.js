@@ -15,7 +15,7 @@ export default function RegisterPage(){
     const usersCollectionRef = collection(db, "pacientes");
     const [pacienteBuscado, setPacienteBuscado] = useState([]);
 
-    const {setPacientes, pacientes} = useContext(PatientContext)
+    const {setPacientes, pacientes, allUsers} = useContext(PatientContext)
     
     useEffect(() => {
         const getUsers = async () => {
@@ -23,6 +23,7 @@ export default function RegisterPage(){
           setPacientes(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
         };
         getUsers();
+        allUsers();
       }, [pacienteBuscado]);
 
       console.log(pacientes)

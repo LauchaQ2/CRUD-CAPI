@@ -2,6 +2,7 @@
     width: 100%;
     border: 1px solid black;
     margin-top: 40px;
+    background-color: white;
 }
 .table tbody td{
     border: 1px solid black;

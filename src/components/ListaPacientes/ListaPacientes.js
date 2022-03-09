@@ -10,8 +10,9 @@ export default function ListaPacientes(){
 
 
 
-    const {pacienteBuscado, pacientes ,setPacientes} = useContext(PatientContext)
- 
+    const {pacienteBuscado, pacientes ,setPacientes, allUsers} = useContext(PatientContext)
+    
+
     
 
     return(

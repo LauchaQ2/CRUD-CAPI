@@ -42,6 +42,7 @@ export default function RegisterPanel(){
      
       return(
             <>  
+            <div className="container-fluid mt-3 mb-3">
             <input
                 placeholder="FECHA..."
                 onChange={(event) => {
@@ -86,6 +87,7 @@ export default function RegisterPanel(){
                 <button onClick={getPacienteByDni}>Buscar Paciente Por DNI</button>
                 <button onClick={allUsers}>Ver todos los pacientes</button>
                 
+                </div>
                 </div>
                 </>
         )
