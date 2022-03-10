@@ -11,7 +11,7 @@ export default function HomePage(){
             <Link to={"/registro"}>
                 <div className="container-registro">
                 <img className="registro" src={registro}/>
-                <button className="btn btn-success">REGISTRO DE PACIENTES</button>
+                <button className="btn btn-success mt-1">REGISTRO DE PACIENTES</button>
                 </div>
             </Link>
         </div>

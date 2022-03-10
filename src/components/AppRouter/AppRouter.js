@@ -1,4 +1,4 @@
-import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import {BrowserRouter,HashRouter, Routes, Route} from 'react-router-dom';
 import React, {useState, useEffect} from 'react';
 import RegisterPage from '../../pages/RegisterPage/RegisterPage';
 import { PatientProvider } from '../../context/patientsContext';
@@ -14,7 +14,7 @@ export default function AppRouter(){
    
     return(
         <>
-        <BrowserRouter>
+        <HashRouter>
         <PatientProvider>
                 <NavBar/>
                 <Routes>
@@ -25,7 +25,7 @@ export default function AppRouter(){
                 <Route index element={<HomePage/>}/> 
                 </Routes>
         </PatientProvider>
-        </BrowserRouter>
+        </HashRouter>
 </>
     )
 }
