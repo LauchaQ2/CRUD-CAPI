@@ -20,7 +20,8 @@ export default function AppRouter(){
                 <Routes>
                 <Route path="/paciente/:id" element={<PacientePanelContainer/>}/>
                 <Route path="/registro" element={<RegisterPage/>}/>
-                <Route path="/" element={<HomePage/>}/> 
+                <Route path="/" element={<HomePage/>}/>
+                <Route path='*' element ={<HomePage/>}/> 
                 <Route index element={<HomePage/>}/> 
                 </Routes>
         </PatientProvider>
