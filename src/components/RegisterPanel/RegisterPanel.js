@@ -17,7 +17,7 @@ export default function RegisterPanel(){
       return(
             <>  
             <div className="container-fluid mt-3 mb-3">
-            <label>Fecha de consulta: </label>
+            <label className="label-date">Fecha de consulta: </label>
             <input
                 type="date"
                 placeholder="FECHA..."
