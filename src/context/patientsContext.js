@@ -3,7 +3,10 @@ import { db } from '../firebaseconfig';
 import {
   collection,
   getDocs,
-  addDoc
+  addDoc,
+  query, 
+  orderBy, 
+  limit
 } from "firebase/firestore";
 
 const PatientContext = createContext();
@@ -69,7 +72,14 @@ const PatientProvider = ({children}) => {
      const clearPatient = () =>{
         setPacientes([])
      }
-  
+     
+     const orderByDate = async () =>{
+      setPacientes([]);
+      const q = query(usersCollectionRef, orderBy("fecha"));
+      const querySnapshot = await getDocs(q);
+      setPacientes(querySnapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+    }
+     
 
     const data = {
         pacienteBuscado,
@@ -97,7 +107,8 @@ const PatientProvider = ({children}) => {
         newDate, 
         setNewDate,
         getPacienteByLastName, 
-        getPacienteByDni
+        getPacienteByDni,
+        orderByDate
     }
 
 

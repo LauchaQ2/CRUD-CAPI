@@ -44,6 +44,7 @@ export default function RegisterPanel(){
             <>  
             <div className="container-fluid mt-3 mb-3">
             <input
+                type="date"
                 placeholder="FECHA..."
                 onChange={(event) => {
                     setNewDate(event.target.value.replace(/\D/g, ""));

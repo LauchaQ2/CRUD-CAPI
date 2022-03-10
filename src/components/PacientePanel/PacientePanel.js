@@ -7,6 +7,7 @@ import {
     updateDoc,
     doc
   } from "firebase/firestore";
+import './PacientePanel.css'
 
 export default function PacientePanel({data,id}){
 
@@ -29,7 +30,7 @@ export default function PacientePanel({data,id}){
         <p>EDAD: {data.edad}</p>
         <p>DNI: {data.dni}</p>
         <p>PATOLOGÍA: {data.patologia}</p>
-        <p>FECHA DE CONSULTA: {data.fecha}</p>
+        <p>FECHA DE CONSULTA: {moment(data.fecha).format('L')}</p>
         <p>OBSERVACIONES: {data.observaciones}</p>
         <input
                 placeholder="Observaciones..."

@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import "./ListaPacientes.css";
-import moment from 'moment'
+import moment from 'moment';
+import 'moment/locale/es';
 import PatientContext from "../../context/patientsContext";
 import ojo from "../../assets/eye.png";
 import {Link} from 'react-router-dom';
@@ -10,13 +11,14 @@ export default function ListaPacientes(){
 
 
 
-    const {pacienteBuscado, pacientes ,setPacientes, allUsers} = useContext(PatientContext)
+    const {pacienteBuscado, pacientes, orderByDate, allUsers} = useContext(PatientContext)
     
 
     
 
     return(
         <>
+        <button onClick={orderByDate}>ordenar por fecha</button>
         <table className="table">
         <thead>
             <tr>
@@ -38,7 +40,7 @@ export default function ListaPacientes(){
                             <td>{paciente.dni}</td>
                             <td>{paciente.edad}</td>
                            <td>{paciente.patologia}</td>
-                            <td>{paciente.fecha}</td>
+                            <td>{moment(paciente.fecha).format('L')}</td>
                             <td><Link to={`/paciente/${paciente.id}`}>
                                 <img className="eye" src={ojo}/>
                                 </Link>
