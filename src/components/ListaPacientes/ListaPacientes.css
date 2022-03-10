@@ -1,10 +1,10 @@
 .table{
-    width: 100%;
     border: 1px solid black;
     margin-top: 40px;
     background-color: white;
+    overflow-x:auto!important;
 }
-.table tbody td{
+.tables tbody td{
     border: 1px solid black;
 }
 .eye{

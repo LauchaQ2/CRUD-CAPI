@@ -24,6 +24,14 @@ const PatientProvider = ({children}) => {
     const usersCollectionRef = collection(db, "pacientes");
     const [newObservation, setNewObservation] = useState("")
     const [newDate, setNewDate] = useState("")
+    const [size, setSize] = useState(window.innerWidth);
+    
+    useEffect(()=>{
+    const handleSize = () =>{
+        setSize(window.innerWidth);
+    }
+    window.addEventListener("resize", handleSize)
+    },[])
 
 
     const createUser = async () => {
@@ -108,7 +116,8 @@ const PatientProvider = ({children}) => {
         setNewDate,
         getPacienteByLastName, 
         getPacienteByDni,
-        orderByDate
+        orderByDate,
+        size
     }
 
 

@@ -10,34 +10,8 @@ import './RegisterPanel.css'
 
 export default function RegisterPanel(){
 
-        const {getPacienteByLastName, getPacienteByDni, pacienteBuscadoDni, setPacienteBuscadoDni,newDate, setNewDate, newDni, setNewDni, setNewName, newPatologia, setNewLastName, setNewAge, setNewPatologia, setPacienteBuscado, getPaciente, createUser, allUsers} = useContext(PatientContext)
-    /*const createUser = async () => {
-        await addDoc(usersCollectionRef, { 
-          nombre: newName, 
-          apellido: newLastName, 
-          edad: Number(newAge), 
-          historia: {patologia: newPatologia},
-          fecha: new Date()
-         })
-      };
-
-      const allUsers = async () => {
-        setPacientes([]);
-        const data = await getDocs(usersCollectionRef);
-        setPacientes(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
-        console.log(pacientes)
-      };
-      
-      var p = [];
-  
-      const getPaciente = () =>{
-        p = pacientes.filter(paciente => paciente.nombre === pacienteBuscado)  
-        console.log(p)
-        setPacientes([]);
-        setPacientes(p)
-      }
-*/
-       
+        const {size, getPacienteByLastName, getPacienteByDni, pacienteBuscadoDni, setPacienteBuscadoDni,newDate, setNewDate, newDni, setNewDni, setNewName, newPatologia, setNewLastName, setNewAge, setNewPatologia, setPacienteBuscado, getPaciente, createUser, allUsers} = useContext(PatientContext)
+    
       console.log(newPatologia)
      
       return(
@@ -77,7 +51,7 @@ export default function RegisterPanel(){
                 } } />
                 <button onClick={createUser}> Crear nuevo paciente </button>
                 
-                <div className="container-fluid d-flex justify-content-center mt-3">
+                <div className="container-fluid d-flex flex-wrap justify-content-center mt-3">
                 <input
                 placeholder="Buscar por..."
                 onChange={(event) => {

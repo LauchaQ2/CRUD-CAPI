@@ -19,14 +19,13 @@ export default function ListaPacientes(){
     return(
         <>
         <button onClick={orderByDate}>ordenar por fecha</button>
+        <div className="container-fluid d-flex justify-content-center p-0">
         <table className="table">
         <thead>
             <tr>
                 <th>Nombre</th>
                 <th>Apellido</th>
                 <th>DNI</th>
-                <th>Edad</th>
-                <th>Patologia</th>
                 <th>Fecha</th>
             </tr>
         </thead>
@@ -38,8 +37,6 @@ export default function ListaPacientes(){
                             <td>{paciente.nombre}</td>
                             <td>{paciente.apellido}</td>
                             <td>{paciente.dni}</td>
-                            <td>{paciente.edad}</td>
-                           <td>{paciente.patologia}</td>
                             <td>{moment(paciente.fecha).format('L')}</td>
                             <td><Link to={`/paciente/${paciente.id}`}>
                                 <img className="eye" src={ojo}/>
@@ -51,6 +48,7 @@ export default function ListaPacientes(){
             })
         }
       </table>
+      </div>
         </>
     )
 }
