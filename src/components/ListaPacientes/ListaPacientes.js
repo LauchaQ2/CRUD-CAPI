@@ -11,13 +11,24 @@ export default function ListaPacientes(){
 
 
 
-    const {pacienteBuscado, pacientes, orderByDate, allUsers} = useContext(PatientContext)
-    
+    const {pacienteBuscado, pacientes, orderByDate, allUsers, getPacienteByLastName, getPacienteByDni, setPacienteBuscado, getPaciente,} = useContext(PatientContext)
 
     
 
     return(
         <>
+        <div className="container-fluid d-flex flex-wrap justify-content-center mt-3">
+                <input
+                placeholder="Buscar por..."
+                onChange={(event) => {
+                    setPacienteBuscado(event.target.value);
+                } } />
+                <button onClick={getPaciente}>Buscar Paciente Por Nombre</button>
+                <button onClick={getPacienteByLastName}>Buscar Paciente Por Apellido</button>
+                <button onClick={getPacienteByDni}>Buscar Paciente Por DNI</button>
+                <button onClick={allUsers}>Ver todos los pacientes</button>
+                
+                </div>
         <button onClick={orderByDate}>ordenar por fecha</button>
         <div className="container-fluid d-flex justify-content-center p-0">
         <table className="table">

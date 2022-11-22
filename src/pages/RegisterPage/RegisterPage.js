@@ -30,7 +30,6 @@ export default function RegisterPage(){
     return(
             <div>
                 <RegisterPanel/>
-                <ListaPacientes/>
             </div>
     )
 }
